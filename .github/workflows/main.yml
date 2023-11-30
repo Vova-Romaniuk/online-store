@@ -5,11 +5,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository and change directory to frontend
-            uses: actions/checkout@v2
+              uses: actions/checkout@v2
 
             - name: Run tests and build
-            run: |
-                cd frontend
-                npm install
-                npm test
-                CI="" npm run build
+              run: |
+                  cd frontend
+                  npm install
+                  npm test
+                  CI="" npm run build
