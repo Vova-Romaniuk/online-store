@@ -7,9 +7,12 @@ jobs:
             - name: Checkout repository and change directory to frontend
               uses: actions/checkout@v2
 
-            - name: Run tests and build
+            - name: 🗂️ Install
               run: |
                   cd frontend
                   npm install
+
+            - name: 🧪 Test  npm test
+              run: |
+                  cd frontend
                   npm test
-                  CI="" npm run build
