@@ -4,11 +4,12 @@ jobs:
     build_and_test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout repository and change directory to frontend
+            uses: actions/checkout@v2
 
-            - name: Change directory to frontend and run tests
-              run: |
-                  cd ../../frontend
-                  npm install
-                  npm test
-                  CI="" npm run build
+            - name: Run tests and build
+            run: |
+                cd frontend
+                npm install
+                npm test
+                CI="" npm run build
