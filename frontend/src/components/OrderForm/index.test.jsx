@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import OrderForm from "./OrderForm";
+import OrderForm from ".";
 
 test('renders "Повернутися на головну" button', () => {
 	render(
