@@ -11,6 +11,7 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
+		"@testing-library/react": "^14.1.2",
 		"autoprefixer": "^10.4.16",
 		"axios": "^1.6.2",
 		"postcss": "^8.4.31",
