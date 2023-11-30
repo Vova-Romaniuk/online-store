@@ -1,13 +1,14 @@
 name: CI
 on: [push]
 jobs:
-    test_commit:
+    build_and_test:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18
-            - run: npm install
-            - run: npm test
-            - run: CI="" npm run build
+
+            - name: Change directory to frontend and run tests
+              run: |
+                  cd frontend
+                  npm install
+                  npm test
+                  CI="" npm run build
