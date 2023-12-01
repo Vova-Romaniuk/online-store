@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { BrowserRouter as Router } from "react-router-dom";
 import OrderForm from ".";
 
-describe("OrderForm component tests", () => {
+suite("OrderForm component tests", () => {
 	test('renders "Повернутися на головну" button', () => {
 		render(
 			<Router>
@@ -12,7 +12,7 @@ describe("OrderForm component tests", () => {
 		);
 
 		const backButton = screen.getByText("Повернутися на головну");
-		expect(backButton).toBeInTheDocument();
+		assert(backButton);
 	});
 
 	test('renders input for "First Name"', () => {
@@ -23,8 +23,8 @@ describe("OrderForm component tests", () => {
 		);
 
 		const firstNameInput = screen.getByLabelText("First Name:");
-		expect(firstNameInput).toBeInTheDocument();
-		expect(firstNameInput).toHaveAttribute("type", "text");
+		assert(firstNameInput);
+		assert.equal(firstNameInput.getAttribute("type"), "text");
 	});
 
 	test('renders input for "Email"', () => {
@@ -35,8 +35,8 @@ describe("OrderForm component tests", () => {
 		);
 
 		const emailInput = screen.getByLabelText("Email:");
-		expect(emailInput).toBeInTheDocument();
-		expect(emailInput).toHaveAttribute("type", "email");
+		assert(emailInput);
+		assert.equal(emailInput.getAttribute("type"), "email");
 	});
 
 	test('renders input for "Phone Number"', () => {
@@ -47,7 +47,7 @@ describe("OrderForm component tests", () => {
 		);
 
 		const phoneNumberInput = screen.getByLabelText("Phone Number:");
-		expect(phoneNumberInput).toBeInTheDocument();
-		expect(phoneNumberInput).toHaveAttribute("type", "tel");
+		assert(phoneNumberInput);
+		assert.equal(phoneNumberInput.getAttribute("type"), "tel");
 	});
 });
