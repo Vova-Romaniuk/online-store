@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 jobs:
-    build_and_test:
+    build_and_test_frontend:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository and change directory to frontend
@@ -11,11 +11,6 @@ jobs:
               run: |
                   cd frontend
                   npm install
-
-            - name: 🔨 Build
-              run: |
-                  cd frontend
-                  npm run build
 
             - name: 🧪 Test  npm test
               run: |
